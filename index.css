@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f4c29 0%, #1a7a4a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #0f4c29;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-label {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #0f4c29;
+}
+
+.game-area {
+    margin: 30px 0;
+}
+
+.player-section {
+    margin: 20px 0;
+}
+
+.section-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.cards {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-height: 120px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.card {
+    width: 70px;
+    height: 100px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    animation: dealCard 0.3s ease;
+}
+
+@keyframes dealCard {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card.red {
+    color: #d32f2f;
+}
+
+.card.black {
+    color: #000;
+}
+
+.card-top {
+    text-align: left;
+}
+
+.card-bottom {
+    text-align: right;
+    transform: rotate(180deg);
+}
+
+.card-back {
+    background: linear-gradient(135deg, #1976d2 0%, #64b5f6 100%);
+    border: 2px solid #0d47a1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2em;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-hit {
+    background: #4caf50;
+    color: white;
+}
+
+.btn-hit:hover:not(:disabled) {
+    background: #45a049;
+}
+
+.btn-stand {
+    background: #ff9800;
+    color: white;
+}
+
+.btn-stand:hover:not(:disabled) {
+    background: #e68900;
+}
+
+.btn-new-game {
+    background: #2196f3;
+    color: white;
+}
+
+.btn-new-game:hover {
+    background: #0b7dda;
+}
+
+.message {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message.win {
+    background: #c8e6c9;
+    color: #2e7d32;
+}
+
+.message.lose {
+    background: #ffcdd2;
+    color: #c62828;
+}
+
+.message.push {
+    background: #fff9c4;
+    color: #f57f17;
+}
+
+.message.info {
+    background: #e3f2fd;
+    color: #1565c0;
+}
